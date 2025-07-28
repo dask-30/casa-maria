@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Maria</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Casa Maria</h1>
+        <p>
+            Situată în Toplița, județul Harghita,  Casa Maria vă invită să petreceți momente de liniște și relaxare într-un cadru primitor, clasificată la două stele.
+        </p>
+        <p>
+            Casa se închiriază exclusiv integral, pentru minimum două nopți, fiind ideală pentru familii sau grupuri de prieteni care își doresc intimitate și confort.
+        </p>
+        <p>
+            Preț: 600 lei/noapte. Dacă se închiriază mai mult de 3 nopți beneficiați de reducere. 
+        </p>
+
+        <a href="https://www.google.com/maps/place/Casa+Maria/@46.9124021,25.3373062,21z/data=!4m9!3m8!1s0x474a6359b25cb869:0x5b59b73d519737f9!5m2!4m1!1i2!8m2!3d46.9123999!4d25.3374247!16s%2Fg%2F11l1n9hk61?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            Vezi locația pe Google Maps
+        </a>
+
+        <p>Oferim:</p>
+        <ul class="lista-servicii">
+            <li>3 camere la etaj complet mobilate</li>
+            <li>Living la parter și bucătărie</li>
+            <li>2 băi /parter și etaj</li>
+            <li>Foișor pentru grătar</li>
+            <li>Wi-fi-TV</li>
+            <li>Parcare</li>
+            <li>Teren de baschet /fotbal</li>
+        </ul>
+
+        <p>Atracții turistice în apropiere:</p>
+        <ul class="lista-servicii">
+            <li>
+                Pârtiile de schi Bradul și Măgheruș
+            </li>
+            <li>
+                Cea mai lungă pistă de bob din țară
+            </li>
+            <li>
+                Cascada cu apă termală
+            </li>
+            <li>
+                Centru de echitație
+            </li>
+            <li>
+                Băile termale Banffy
+            </li>
+            <li>
+                Punct de belvedere pe Vârful Tarnița
+            </li>
+            <li>
+                Stâncile cu coloape
+            </li>
+            <li>   Mănăstirea Sfântul Ilie
+            </li>
+        </ul>
+            <a href="#" onclick="document.getElementById('galerie').style.display='block'">Vezi Galeria</a>
+
+            <div id="galerie" style="display: none; margin-top: 20px;">
+                <h2>Galerie foto</h2>
+                <div class="galerie-poze">
+                    <img src="poze/camera1.jpeg" onclick="openLightbox(this.src)">
+                    <img src="poze/camera2.jpeg" onclick="openLightbox(this.src)">
+                    <img src="poze/camera3.jpeg" onclick="openLightbox(this.src)">
+                    <img src="poze/baie1.jpeg" onclick="openLightbox(this.src)">
+                    <img src="poze/curte1.jpeg" onclick="openLightbox(this.src)">
+                    <img src="poze/foisor1.jpeg" onclick="openLightbox(this.src)">
+                    <img src="poze/curte2.jpeg" onclick="openLightbox(this.src)">
+                    <img src="poze/living.jpeg" onclick="openLightbox(this.src)">
+                    <img src="poze/semineu.jpeg" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+
+            <p>Date contact:</p>
+            <ul class="lista-contact">
+                <li>Telefon: <a href="tel:0740644746">0740644746</a> / <a href="tel:0741201274">0741201274</a></li>
+                <li><a href="https://wa.me/40740644746" target="_blank">Scrie-ne pe WhatsApp</a></li>
+            </ul>
+    </div>
+
+    <!-- Lightbox Viewer -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Imagine mărită">
+    </div>
+
+    <!-- Script pentru lightbox -->
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            lightboxImg.src = src;
+            lightbox.style.display = "flex";
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
