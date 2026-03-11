@@ -50,7 +50,6 @@ body {
             transform: scale(1.05);
         }
 
-/* Lightbox styles */
 .lightbox {
     display: none;
     position: fixed;
@@ -71,3 +70,27 @@ body {
         box-shadow: 0 0 20px #fff;
         cursor: pointer;
     }
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+    .booking-form input,
+    .booking-form textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .booking-form button {
+        padding: 10px;
+        background-color: #2d6cdf;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+        .booking-form button:hover {
+            background-color: #1f4fa8;
+        }
