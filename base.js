@@ -1,12 +1,16 @@
 async function loadDates() {
 
-    const res = await fetch("http://localhost:8080/api/availability");
-    const ranges = await res.json();
+    try {
+        const res = await fetch("http://localhost:8080/api/reservations/availability");
+        const ranges = await res.json();
 
-    const disabledRanges = ranges.map(r => ({
-        from: r.arrivalDate,
-        to: r.departureDate
-    }));
+        disabledRanges = ranges.map(r => ({
+            from: r.arrivalDate,
+            to: r.departureDate
+        }));
+    } catch (e) {
+        console.log("Nu s-au putut încărca datele:", e);
+    }
 
     initCalendar(disabledRanges);
 }
