@@ -1,3 +1,33 @@
+async function loadDates() {
+
+    const res = await fetch("http://localhost:8080/api/availability");
+    const ranges = await res.json();
+
+    const disabledRanges = ranges.map(r => ({
+        from: r.arrivalDate,
+        to: r.departureDate
+    }));
+
+    initCalendar(disabledRanges);
+}
+function initCalendar(disabledRanges) {
+
+    const checkout = flatpickr("#checkout", {
+        dateFormat: "Y-m-d",
+        disable: disabledRanges
+    });
+
+    flatpickr("#checkin", {
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    disable: disabledRanges,
+    onChange: function(selectedDates, dateStr) {
+        checkout.set("minDate", dateStr);
+    }
+});
+}
+window.addEventListener("load", loadDates);
+
 function openLightbox(src) {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -8,6 +38,7 @@ function openLightbox(src) {
 function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
 }
+
 
 document.getElementById("bookingForm").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -39,7 +70,8 @@ document.getElementById("bookingForm").addEventListener("submit", function (even
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
+                "Authorization": `Bearer ${token}`,
+                "X-Source":"browser"
             },
             body: JSON.stringify(data)
         });
