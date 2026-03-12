@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa Maria</title>
     <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
     <div class="container">
@@ -79,10 +80,10 @@
             <input type="tel" id="phone" required>
 
             <label>Data sosire:</label>
-            <input type="date" id="checkin" required>
+            <input type="text" id="checkin" required>
 
             <label>Data plecare:</label>
-            <input type="date" id="checkout" required>
+            <input type="text" id="checkout" required>
 
             <label>Descriere (număr persoane, alte aspecte):</label>
             <textarea id="message" rows="3" required></textarea>
@@ -104,7 +105,7 @@
     </div>
 
     <script src="base.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-    
 </body>
 </html>
