@@ -57,10 +57,10 @@ document.getElementById("bookingForm").addEventListener("submit", function (even
         deposit: false
     };
     
-    fetch("https://springbootserver-ra5y.onrender.com/api/auth/login", {
+    fetch("https://springbootserver-ra5y.onrender.com/api/auth/site-login", {
         method: "POST",
         headers: {
-            "X-API-KEY": "qpqdofm12r-flvopqn341m34k5j3fao345kt42"
+            "X-API-KEY": "qpqdofm12r-flvopqn341m34k5j3fao345kt42",
         }
     })
     .then(res => {
