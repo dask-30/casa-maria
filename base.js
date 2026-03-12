@@ -1,7 +1,7 @@
 async function loadDates() {
 
     try {
-        const res = await fetch("http://localhost:8080/api/reservations/availability");
+        const res = await fetch("https://springbootserver-ra5y.onrender.com/api/reservations/availability");
         const ranges = await res.json();
 
         disabledRanges = ranges.map(r => ({
@@ -57,7 +57,7 @@ document.getElementById("bookingForm").addEventListener("submit", function (even
         deposit: false
     };
     
-    fetch("http://localhost:8080/api/auth/site-login", {
+    fetch("https://springbootserver-ra5y.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
             "X-API-KEY": "qpqdofm12r-flvopqn341m34k5j3fao345kt42"
@@ -70,7 +70,7 @@ document.getElementById("bookingForm").addEventListener("submit", function (even
     .then(loginData => {
         const token = loginData.token;
 
-        return fetch("http://localhost:8080/api/reservations", {
+        return fetch("https://springbootserver-ra5y.onrender.com/api/reservations", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
