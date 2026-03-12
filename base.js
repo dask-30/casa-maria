@@ -83,6 +83,9 @@ document.getElementById("bookingForm").addEventListener("submit", function (even
     .then(result => {
         console.log("Rezervare creată:", result);
         alert("Rezervarea a fost trimisă!");
+
+
+        loadDates();
     })
     .catch(error => {
         console.error("Eroare:", error);
