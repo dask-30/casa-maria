@@ -1,21 +1,89 @@
+/*MAIN PAGE CSS*/
+
 body {
     margin: 0;
     padding: 0;
-    background-image: url("poze/afara.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #eee;
+
 }
 
-.container {
-    max-width: 800px;
-    margin: 100px auto;
-    background-color: rgba(255, 255, 255, 0.84);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Noto Serif',Arial,sans-serif;
 }
+
+header {
+    background: #070f2e;
+    color: white;
+    padding: 15px;
+    min-height:50vh;
+    background-image:url("poze/background.jpeg");
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+    
+}
+footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+    max-height: 3vh;
+    min-height: 1vh;
+}
+.layout {
+    display: flex;
+    flex: 1;
+}
+main {
+    background-color: #c8cadb;
+}
+.menu {
+    width: 31.5vh;
+    background: #a8a9b3;
+    padding: 15px;
+}
+    .menu li {
+        margin: auto;
+        
+    }
+    .menu a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: black;
+        background: #c8cadb;
+        height: 40vh;
+        border: 2px solid #888;
+        border-bottom: none
+    }
+    .menu li:last-child a {
+        border-bottom: 2px solid #888;
+    }
+    .menu img {
+        display: block;
+        height:20vh;
+        width:20vh;
+    }
+    .menu a:hover {
+        background: #6d6e75;
+    }
+    .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+.container {
+    flex: 1;
+    padding: 20px;
+}
+
 
 .lista-servicii {
     list-style-type: square;
@@ -31,15 +99,19 @@ body {
         text-decoration: none;
         font-weight: bold;
     }
-
+    /*GALLERY CSS*/
+#titlu-galerie {
+    text-align:center;
+}
 .galerie-poze {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 3vh;
+    margin: 2vh;
 }
 
     .galerie-poze img {
-        width: 100px;
+        width: 65vh;
         height: auto;
         cursor: pointer;
         border-radius: 8px;
@@ -70,17 +142,49 @@ body {
         box-shadow: 0 0 20px #fff;
         cursor: pointer;
     }
-.booking-form {
+
+    /*---BOOKING FORM CSS*/
+#bookingPage {
+    background-image:url("poze/pisici.png");
+    background-size:41.2vh;
+    
+
+}
+
+#loading {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+.booking-form {
+    display: none;
     flex-direction: column;
     gap: 10px;
     max-width: 400px;
+    position:center;
+    margin:10vh auto;
+    border:2px solid black;
+    border-radius:2vh;
+    padding:5vh;
+    background:#e7fdff;
+
+    
+
 }
 
     .booking-form input,
     .booking-form textarea {
         padding: 8px;
         font-size: 14px;
+        border-radius:2vh;
     }
 
     .booking-form button {
@@ -89,6 +193,7 @@ body {
         color: white;
         border: none;
         cursor: pointer;
+        border-radius:2vh;
     }
 
         .booking-form button:hover {
