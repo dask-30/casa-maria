@@ -6,106 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa Maria</title>
     <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Noto+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Casa Maria</h1>
-        <p>
-            Situată în Toplița, județul Harghita, Casa Maria vă invită să petreceți momente de liniște și relaxare într-un cadru primitor, clasificată la două stele.
-        </p>
-        <p>
-            Casa se închiriază exclusiv integral, pentru minimum două nopți, fiind ideală pentru familii sau grupuri de prieteni care își doresc intimitate și confort.
-        </p>
-        <p>
-            Preț: 600 lei/noapte. Dacă se închiriază mai mult de 3 nopți beneficiați de reducere.
-        </p>
 
-        <a href="https://www.google.com/maps/place/Casa+Maria/@46.9124021,25.3373062,21z" target="_blank" title="Casa Maria">
-            Vezi locația pe Google Maps
-        </a>
+    <header>
+        
+    </header>
 
-        <p>Oferim:</p>
-        <ul class="lista-servicii">
-            <li>3 camere la etaj complet mobilate</li>
-            <li>Living la parter și bucătărie</li>
-            <li>2 băi /parter și etaj</li>
-            <li>Foișor pentru grătar</li>
-            <li>Wi-fi-TV</li>
-            <li>Parcare</li>
-            <li>Teren de baschet /fotbal</li>
-        </ul>
+    <div class="layout">
 
-        <p>Atracții turistice în apropiere:</p>
-        <ul class="lista-servicii">
-            <li>Pârtiile de schi Bradul și Măgheruș</li>
-            <li>Cea mai lungă pistă de bob din țară</li>
-            <li>Cascada cu apă termală</li>
-            <li>Centru de echitație</li>
-            <li>Băile termale Banffy</li>
-            <li>Punct de belvedere pe Vârful Tarnița</li>
-            <li>Stâncile cu coloape</li>
-            <li>Mănăstirea Sfântul Ilie</li>
-        </ul>
-        <button id="galerieBtn" onclick="document.getElementById('galerie').style.display='block'"> Vezi Galeria</button>
+        <nav class="menu">
+            <ul class="menu-list">
+                <li>
+                    <a href="form_page.html">
+                        <img src="poze/formularIcon.png" alt="formular icon"/> 
+                    </a>
+                </li>
+                <li>
+                    <a href="photo_page.html">
+                        <img src="poze/pozeIcon.png" alt="poze icon"/>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
+        <main class="container">
+            <h1>Casa Maria</h1>
+            <p>
+                Situată în Toplița, județul Harghita, Casa Maria vă invită să petreceți momente de liniște și relaxare într-un cadru primitor, clasificată la două stele.
+            </p>
+            <p>
+                Casa se închiriază exclusiv integral, pentru minimum două nopți, fiind ideală pentru familii sau grupuri de prieteni care își doresc intimitate și confort.
+            </p>
+            <p>
+                Preț: 600 lei/noapte. Dacă se închiriază mai mult de 3 nopți beneficiați de reducere.
+            </p>
 
+            <a href="https://www.google.com/maps/place/Casa+Maria/@46.9124021,25.3373062,21z" target="_blank" title="Casa Maria">
+                Vezi locația pe Google Maps
+            </a>
 
-        <div id="galerie" style="display: none; margin-top: 20px;">
-            <h2>Galerie foto</h2>
-            <div class="galerie-poze">
-                <img src="poze/afara3.jpg" onclick="openLightbox(this.src)">
-                <img src="poze/camera1.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/camera2.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/camera3.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/baie1.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/curte1.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/foisor1.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/curte2.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/living.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/semineu.jpeg" onclick="openLightbox(this.src)">
-                <img src="poze/foisor2.jpg" onclick="openLightbox(this.src)">
-                <img src="poze/afara2.jpg" onclick="openLightbox(this.src)">
-                <img src="poze/floare.jpg" onclick="openLightbox(this.src)">
-            </div>
-        </div>
+            <p>Oferim:</p>
+            <ul class="lista-servicii">
+                <li>3 camere la etaj complet mobilate</li>
+                <li>Living la parter și bucătărie</li>
+                <li>2 băi /parter și etaj</li>
+                <li>Foișor pentru grătar</li>
+                <li>Wi-fi TV</li>
+                <li>Parcare</li>
+                <li>Teren de baschet /fotbal</li>
+            </ul>
 
-        <h2>Creeaza rezervare(!DISCLAIMER: NU FOLOSITI FORMULARUL! INCA ESTE IN DEZVOLTARE!)</h2>
+            <p>Atracții turistice în apropiere:</p>
+            <ul class="lista-servicii">
+                <li>Pârtiile de schi Bradul și Măgheruș</li>
+                <li>Cea mai lungă pistă de bob din țară</li>
+                <li>Cascada cu apă termală</li>
+                <li>Centru de echitație</li>
+                <li>Băile termale Banffy</li>
+                <li>Punct de belvedere pe Vârful Tarnița</li>
+                <li>Stâncile cu coloape</li>
+                <li>Mănăstirea Sfântul Ilie</li>
+            </ul>
 
-        <form id="bookingForm" class="booking-form">
-            <label>Nume:</label>
-            <input type="text" id="name" required>
+            <p>Date contact:</p>
+            <ul class="lista-contact">
+                <li>Telefon: <a href="tel:0740644746">0740644746</a> / <a href="tel:0741201274">0741201274</a></li>
+                <li><a href="https://wa.me/40740644746" target="_blank">Scrie-ne pe WhatsApp</a></li>
+            </ul>
+        </main>
 
-            <label>Telefon:</label>
-            <input type="tel" id="phone" required>
-
-            <label>Data sosire:</label>
-            <input type="text" id="checkin" required>
-
-            <label>Data plecare:</label>
-            <input type="text" id="checkout" required>
-
-            <label>Descriere (număr persoane, alte aspecte):</label>
-            <textarea id="message" rows="3" required></textarea>
-
-            <button type="submit">Trimite cerere</button>
-        </form>
-
-
-
-        <p>Date contact:</p>
-        <ul class="lista-contact">
-            <li>Telefon: <a href="tel:0740644746">0740644746</a> / <a href="tel:0741201274">0741201274</a></li>
-            <li><a href="https://wa.me/40740644746" target="_blank">Scrie-ne pe WhatsApp</a></li>
-        </ul>
     </div>
 
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Imagine mărită">
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <footer>
+        © Casa Maria
+    </footer>
     <script src="base.js"></script>
-
 </body>
 </html>
