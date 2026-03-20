@@ -1,19 +1,46 @@
+async function wakeServer(){
+    try{
+        const res=await fetch("https://springbootserver-ra5y.onrender.com/api/auth/wake");
+        const data = await res.json();
+        console.log(data);
+    }
+    catch(e){
+        console.log("Nu s-a putut trezi serverul");
+    }
+}
+document.addEventListener("DOMContentLoaded", () => {
+    wakeServer();
+});
 async function loadDates() {
+    const loading = document.getElementById("loading");
+    const form = document.getElementById("reservationForm");
 
     try {
         const res = await fetch("https://springbootserver-ra5y.onrender.com/api/reservations/availability");
+
+        if(!res.ok) throw new Error("Server not ready");
+
         const ranges = await res.json();
 
-        disabledRanges = ranges.map(r => ({
+        const disabledRanges = ranges.map(r => ({
             from: r.arrivalDate,
             to: r.departureDate
         }));
-    } catch (e) {
-        console.log("Nu s-au putut încărca datele:", e);
-    }
 
-    initCalendar(disabledRanges);
+        initCalendar(disabledRanges);
+
+        loading.style.display = "none";
+        form.style.display = "block";
+
+    } catch (e) {
+        console.log("Server încă nu e ready:", e);
+
+        loading.innerText = "Se pornește serverul... te rugăm să aștepți câteva secunde";
+        
+        setTimeout(loadDates, 5000);
+    }
 }
+
 function initCalendar(disabledRanges) {
 
     const checkout = flatpickr("#checkout", {
@@ -30,7 +57,12 @@ function initCalendar(disabledRanges) {
     }
 });
 }
-window.addEventListener("load", loadDates);
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#bookingForm");
+    if(form){
+        loadDates(); 
+    }
+});
 
 function openLightbox(src) {
     const lightbox = document.getElementById("lightbox");
