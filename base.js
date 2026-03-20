@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 async function loadDates() {
     const loading = document.getElementById("loading");
-    const form = document.getElementById("reservationForm");
+    const form = document.getElementById("bookingForm");
 
     try {
         const res = await fetch("https://springbootserver-ra5y.onrender.com/api/reservations/availability");
@@ -29,8 +29,10 @@ async function loadDates() {
 
         initCalendar(disabledRanges);
 
-        loading.style.display = "none";
-        form.style.display = "flex";
+        if (loading && form) {
+            loading.style.display = "none";
+            form.style.display = "flex";
+    }
 
     } catch (e) {
         console.log("Server încă nu e ready:", e);
