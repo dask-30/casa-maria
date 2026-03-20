@@ -49,8 +49,9 @@ async function loadDates() {
     } catch (e) {
         console.log("Server încă nu e ready:", e);
 
-        loading.innerText = "Se pornește serverul... te rugăm să aștepți câteva secunde";
-        
+        if (loading && form) {
+            loading.style.display = "flex";
+            form.style.display = "none";
         setTimeout(loadDates, 5000);
     }
 }
