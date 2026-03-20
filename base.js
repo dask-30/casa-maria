@@ -1,15 +1,27 @@
-async function wakeServer(){
-    try{
-        const res=await fetch("https://springbootserver-ra5y.onrender.com/api/auth/wake");
+async function wakeServer(retry = 0) {
+    try {
+        const res = await fetch("https://springbootserver-ra5y.onrender.com/api/auth/wake", { method:"POST" });
+        if(!res.ok) throw new Error("Server nu e ready");
         const data = await res.json();
-        console.log(data);
-    }
-    catch(e){
-        console.log("Nu s-a putut trezi serverul");
+        console.log("Server trezit:", data);
+        return true; 
+    } catch(e) {
+        console.log("Nu s-a putut trezi serverul:", e.message);
+        if(retry < 7) { 
+            console.log("Retry in 10 sec...");
+            await new Promise(r => setTimeout(r, 10000));
+            return wakeServer(retry + 1);
+        }
+        return false;
     }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
-    wakeServer();
+   
+    if(!sessionStorage.getItem("serverAwake")) {
+        wakeServer();
+        sessionStorage.setItem("serverAwake", "true");
+    }
 });
 async function loadDates() {
     const loading = document.getElementById("loading");
