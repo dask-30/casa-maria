@@ -30,7 +30,7 @@ async function loadDates() {
         initCalendar(disabledRanges);
 
         loading.style.display = "none";
-        form.style.display = "block";
+        form.style.display = "flex";
 
     } catch (e) {
         console.log("Server încă nu e ready:", e);
