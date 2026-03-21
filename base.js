@@ -1,5 +1,8 @@
+console.log("JS loaded");
+
 async function wakeServer(retry = 0) {
     try {
+        console.log("S-a intrat in wakeServer si retry="+retry)
         const res = await fetch("https://springbootserver-ra5y.onrender.com/api/auth/wake", { method:"POST" });
         if(!res.ok) throw new Error("Server nu e ready");
         const data = await res.json();
@@ -17,7 +20,7 @@ async function wakeServer(retry = 0) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-   
+   console.log("DOM loaded");
     if(!sessionStorage.getItem("serverAwake")) {
         wakeServer();
         sessionStorage.setItem("serverAwake", "true");
@@ -28,6 +31,7 @@ async function loadDates() {
     const form = document.getElementById("bookingForm");
 
     try {
+        console.log("S-a intrat in load dates")
         const res = await fetch("https://springbootserver-ra5y.onrender.com/api/reservations/availability");
 
         if(!res.ok) throw new Error("Server not ready");
@@ -75,6 +79,7 @@ function initCalendar(disabledRanges) {
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("#bookingForm");
     if(form){
+        console.log("loading dates");
         loadDates(); 
     }
 });
