@@ -1,4 +1,5 @@
 /*MAIN PAGE CSS*/
+/*for desktop*/
 
 body {
     margin: 0;
@@ -7,8 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #eee;
-
+    background-color: #c8cadb;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,16 +35,21 @@ footer {
 }
 .layout {
     display: flex;
-    flex: 1;
+    flex:1;
 }
 main {
     background-color: #c8cadb;
 }
-.menu {
+.menu{
     width: 31.5vh;
     background: #a8a9b3;
     padding: 15px;
+    
 }
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+    }
     .menu li {
         margin: auto;
         
@@ -58,22 +63,27 @@ main {
         box-sizing: border-box;
         text-decoration: none;
         color: black;
-        background: #c8cadb;
-        height: 40vh;
-        border: 2px solid #888;
-        border-bottom: none
+        background: inherit;
+        height: 250px;
+        border:none;
     }
-    .menu li:last-child a {
-        border-bottom: 2px solid #888;
+    
+    .menu a:active, .menu a:hover, .menu a:focus, .menu a:after {
+        background: #a8a9b3;
+        color: #a8a9b3;
     }
     .menu img {
         display: block;
-        height:20vh;
-        width:20vh;
+        height:150px;
+        width:150px;
     }
-    .menu a:hover {
-        background: #6d6e75;
-    }
+        .menu img:hover {
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            width: 230px;
+            height: 230px;
+            transform:translateX(-15px);
+            transition: width 1s,height 1s,transform 0.5s ease-in;
+        }
     .menu ul {
         list-style: none;
         margin: 0;
@@ -199,3 +209,54 @@ main {
         .booking-form button:hover {
             background-color: #1f4fa8;
         }
+
+@media only screen and (max-width: 800px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+        .menu ul {
+            flex-direction: row;
+        }
+
+        .menu li {
+            margin: 0;
+            width: auto;
+            flex: 1;
+        }
+
+        .menu a {
+            height:100px;
+        }
+
+        .menu img{
+            height:80px;
+            width:80px;
+
+        }
+            .menu img:hover {
+                filter: none;
+                height: 80px;
+                width: 80px;
+                transform: none;
+                transition: none;
+            }
+
+
+
+    .galerie-poze img {
+        width: 100px;
+    }
+
+        
+
+
+        
+
+        
+}
