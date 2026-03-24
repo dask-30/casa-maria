@@ -215,48 +215,38 @@ main {
         flex-direction: column;
     }
 
-    .menu {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-        .menu ul {
-            flex-direction: row;
+    @media only screen and (max-width: 800px) {
+        .menu {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
-        .menu li {
-            margin: 0;
-            width: auto;
-            flex: 1;
-        }
-
-        .menu a {
-            height:100px;
-        }
-
-        .menu img{
-            height:80px;
-            width:80px;
-
-        }
-            .menu img:hover {
-                filter: none;
-                height: 80px;
-                width: 80px;
-                transform: none;
-                transition: none;
+            .menu ul {
+                display: flex;
+                flex-direction: row;
+                padding: 0;
+                margin: 0;
             }
 
+            .menu li {
+                flex: 1;
+                margin: 0;
+            }
 
+            .menu a {
+                height: 100px;
+            }
 
-    .galerie-poze img {
-        width: 100px;
-    }
+            .menu img {
+                width: 80px;
+                height: 80px;
+                transform: none;
+                filter: none;
+            }
 
-        
-
-
-        
-
-        
+        .galerie-poze img {
+            width: 29%;
+        }
+    }    
 }
