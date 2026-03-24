@@ -245,6 +245,13 @@ main {
                 transform: none;
                 filter: none;
             }
+                .menu img:hover {
+                    width: 80px;
+                    height: 80px;
+                    transform: none;
+                    filter: none;
+                    transition:none;
+                }
 
         .galerie-poze img {
             width: 29%;
